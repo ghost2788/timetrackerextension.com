@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Tracker Extension - Track & Optimize Your Online Time</title>
+    <meta name="description" content="Browser extension for tracking and analyzing your online time usage with advanced productivity insights and website monitoring.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .bg-brand {
+            background-color: #D4AF37;
+        }
+        .text-brand {
+            color: #D4AF37;
+        }
+        .border-brand {
+            border-color: #D4AF37;
+        }
+        .hover-brand:hover {
+            background-color: #C4A027;
+        }
+
+        .aspect-w-16 {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+        }
+
+        .aspect-w-4 {
+            position: relative;
+            padding-bottom: 75%; /* 4:3 Aspect Ratio */
+        }
+
+        .aspect-w-16 > img,
+        .aspect-w-4 > img {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            object-fit: cover;
+            object-position: top;
+        }
+
+        /* Feature card image container */
+        .feature-image-container {
+            height: 200px; /* Fixed height */
+            overflow: hidden;
+            border-radius: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .feature-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+        }
+
+        /* Add some spacing between feature cards */
+        .feature-grid {
+            gap: 2rem;
+        }
+
+        /* Make feature cards more compact */
+        .feature-card {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .feature-card-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .feature-card-images {
+            margin-top: auto;
+        }
+
+        .aspect-h-13 {
+            padding-bottom: 81.25%; /* 16:13 aspect ratio */
+        }
+
+        .object-position-y-50 {
+            object-position: 0 50%; /* Changed from 25% to 50% */
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="icons/icon48.png" alt="Time Tracker Logo" class="h-12 w-12 mr-4">
+                <span class="text-xl font-bold">Time Tracker</span>
+            </div>
+            <div class="space-x-6">
+                <a href="#features" class="text-gray-700 hover:text-gray-900">Features</a>
+                <a href="#pricing" class="text-gray-700 hover:text-gray-900">Pricing</a>
+                <a href="https://chrome.google.com/webstore/detail/[your-extension-id]" 
+                   class="bg-brand text-white px-6 py-2 rounded-full font-medium hover-brand">
+                    Add to Chrome
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="bg-white">
+        <div class="container mx-auto px-6 py-20">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
+                        Track Your Time.<br>Boost Productivity.
+                    </h1>
+                    <p class="text-xl mb-8 text-gray-600">
+                        Understand and optimize how you spend time online with intuitive tracking and powerful insights.
+                    </p>
+                    <div class="space-x-4">
+                        <a href="https://chrome.google.com/webstore/detail/[your-extension-id]" 
+                           class="bg-brand text-white px-8 py-3 rounded-full font-medium hover-brand inline-flex items-center">
+                            <i class="fab fa-chrome mr-2"></i>
+                            Add to Chrome - It's Free
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="aspect-w-16 aspect-h-13 rounded-lg shadow-xl overflow-hidden">
+                        <img src="images/siteslist.png" 
+                             alt="Time Tracker Dashboard" 
+                             class="object-cover w-full h-full object-position-y-50">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-16">Comprehensive Time Management Suite</h2>
+            
+            <!-- Main Feature Showcase -->
+            <div class="mb-20">
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="md:w-1/2">
+                        <div class="aspect-w-16 aspect-h-9 rounded-lg shadow-xl overflow-hidden">
+                            <img src="images/dashboard.png" 
+                                 alt="Time Tracker Dashboard" 
+                                 class="object-cover w-full h-full">
+                        </div>
+                    </div>
+                    <div class="md:w-1/2">
+                        <h3 class="text-2xl font-bold mb-4">Real-Time Dashboard</h3>
+                        <p class="text-gray-600 mb-6">Track your current site usage and see daily totals at a glance. Get immediate insights into your browsing patterns.</p>
+                        <ul class="space-y-3">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-brand mr-2"></i>
+                                Live time tracking for current site
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-brand mr-2"></i>
+                                Daily, weekly, monthly views
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-brand mr-2"></i>
+                                Top sites overview
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feature Grid -->
+            <div class="grid md:grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Analytics Card -->
+                <div class="p-8 rounded-lg shadow-lg bg-white">
+                    <div class="flex flex-col md:flex-row items-start gap-8">
+                        <div class="md:w-2/5">
+                            <div class="bg-gray-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                                <i class="fas fa-chart-pie text-2xl text-brand"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-4">Advanced Analytics</h3>
+                            <p class="text-gray-600 mb-4">View comprehensive breakdowns with pie charts and time distribution analysis.</p>
+                        </div>
+                        <div class="md:w-3/5">
+                            <div class="aspect-w-16 aspect-h-13 rounded-lg shadow-xl overflow-hidden">
+                                <img src="images/charts.png" 
+                                     alt="Category Distribution" 
+                                     class="object-cover w-full h-full">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Goals & Limits Card -->
+                <div class="p-8 rounded-lg shadow-lg bg-white">
+                    <div class="flex flex-col md:flex-row items-start gap-8">
+                        <div class="md:w-2/5">
+                            <div class="bg-gray-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                                <i class="fas fa-bullseye text-2xl text-brand"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-4">Goals & Limits</h3>
+                            <p class="text-gray-600 mb-4">Set and track custom time goals and limits for better productivity.</p>
+                        </div>
+                        <div class="md:w-3/5">
+                            <div class="aspect-w-16 aspect-h-13 rounded-lg shadow-xl overflow-hidden">
+                                <img src="images/goals.png" 
+                                     alt="Active Goals" 
+                                     class="object-cover w-full h-full">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Categories Card -->
+                <div class="p-8 rounded-lg shadow-lg bg-white">
+                    <div class="flex flex-col md:flex-row items-start gap-8">
+                        <div class="md:w-2/5">
+                            <div class="bg-gray-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                                <i class="fas fa-tags text-2xl text-brand"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-4">Custom Categories</h3>
+                            <p class="text-gray-600 mb-4">Create and assign custom categories to better organize your time.</p>
+                        </div>
+                        <div class="md:w-3/5">
+                            <div class="aspect-w-16 aspect-h-13 rounded-lg shadow-xl overflow-hidden">
+                                <img src="images/categories.png" 
+                                     alt="Custom Categories" 
+                                     class="object-cover w-full h-full">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reports Card -->
+                <div class="p-8 rounded-lg shadow-lg bg-white">
+                    <div class="flex flex-col md:flex-row items-start gap-8">
+                        <div class="md:w-2/5">
+                            <div class="bg-gray-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                                <i class="fas fa-file-alt text-2xl text-brand"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-4">Detailed Reports</h3>
+                            <p class="text-gray-600 mb-4">Generate comprehensive reports with usage patterns and insights.</p>
+                        </div>
+                        <div class="md:w-3/5">
+                            <div class="aspect-w-16 aspect-h-13 rounded-lg shadow-xl overflow-hidden">
+                                <img src="images/reports.png" 
+                                     alt="Detailed Reports" 
+                                     class="object-cover w-full h-full">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-16">Simple, Transparent Pricing</h2>
+            
+            <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+                <!-- Free Plan -->
+                <div class="bg-white rounded-lg shadow-lg p-8">
+                    <h3 class="text-2xl font-bold mb-4">Free Version</h3>
+                    <p class="text-gray-600 mb-6">Perfect for getting started</p>
+                    <p class="text-3xl font-bold mb-6">$0</p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            Basic time tracking
+                        </li>
+                        <li class="flex items-center"></li>
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            Charts & Graphs
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            Daily statistics
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            Top sites overview
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            Predefined & Custom Categories
+                        </li>
+                    </ul>
+                    <a href="https://chrome.google.com/webstore/detail/[your-extension-id]" 
+                       class="block text-center bg-brand text-white px-6 py-3 rounded-full hover-brand">
+                        Install
+                    </a>
+                </div>
+                
+                <!-- Pro Plan -->
+                <div class="bg-white rounded-lg shadow-lg p-8 border-2 border-brand relative">
+                    <div class="absolute top-0 right-0 bg-brand text-white px-3 py-1 rounded-bl-lg">
+                        Most Popular
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Pro Version</h3>
+                    <p class="text-gray-600 mb-6">For power users</p>
+                    <p class="text-3xl font-bold mb-6">$9.99</p>
+                    <p class="text-sm text-gray-500 mb-6">One-time payment</p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            Everything in Free
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            Set Custom Goals
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            Set Custom Time Limits
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            Daily Analytic Reports
+                        </li>
+                    </ul>
+                    <a href="https://chrome.google.com/webstore/detail/[your-extension-id]" 
+                       class="block text-center bg-brand text-white px-6 py-3 rounded-full hover-brand">
+                        Install
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-16">Frequently Asked Questions</h2>
+            
+            <div class="max-w-3xl mx-auto space-y-8">
+                <div>
+                    <h3 class="text-xl font-semibold mb-2">How does Time Tracker protect my privacy?</h3>
+                    <p class="text-gray-600">All your data is stored locally on your device. We don't collect or transmit any of your browsing data to external servers.</p>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold mb-2">Is the Pro version a subscription?</h3>
+                    <p class="text-gray-600">No, the Pro version is a one-time payment of $9.99. Once purchased, you'll have lifetime access to all premium features.</p>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold mb-2">What's included in the free version?</h3>
+                    <p class="text-gray-600">The free version includes basic time tracking, daily statistics, site overview, and predefined categories. It's perfect for users who want to understand their browsing habits.</p>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold mb-2">What extra features do I get with Pro?</h3>
+                    <p class="text-gray-600">Pro users get access to daily analytics reports that they can download, set custom goals & time limits and you get access to all future features for free.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-8 md:mb-0">
+                    <img src="icons/icon48.png" alt="Time Tracker Logo" class="h-12 w-12 mb-4">
+                    <p class="text-gray-400">© 2024 Time Tracker</p>
+                </div>
+                
+                <div class="flex space-x-8">
+                    <a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-white">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 
