@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <linearGradient id="metallic-16" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#D4AF37"/>
+      <stop offset="50%" style="stop-color:#FFF5BD"/>
+      <stop offset="100%" style="stop-color:#D4AF37"/>
+    </linearGradient>
+    <linearGradient id="sand-16" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#4FD1C5"/>
+      <stop offset="100%" style="stop-color:#2C7A7B"/>
+    </linearGradient>
+    <filter id="glow-16">
+      <feGaussianBlur stdDeviation="0.5" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <circle cx="8" cy="8" r="7.5" fill="url(#metallic-16)"/>
+  <path d="M4.5 2.5h7v1L8 8.5 4.5 3.5v-1z" fill="url(#metallic-16)"/>
+  <path d="M4.5 13.5h7v-1L8 7.5 4.5 12.5v1z" fill="url(#metallic-16)"/>
+  
+  <!-- Enlarged and glowing sand -->
+  <path d="M5 3h6L8 8z" fill="url(#sand-16)" filter="url(#glow-16)"/>
+  <path d="M5 13h6L8 8z" fill="url(#sand-16)" filter="url(#glow-16)"/>
+</svg>

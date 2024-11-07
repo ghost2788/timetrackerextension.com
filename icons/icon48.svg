@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="metallic-48" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#D4AF37"/>
+      <stop offset="50%" style="stop-color:#FFF5BD"/>
+      <stop offset="100%" style="stop-color:#D4AF37"/>
+    </linearGradient>
+    <linearGradient id="sand-48" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#4FD1C5"/>
+      <stop offset="100%" style="stop-color:#2C7A7B"/>
+    </linearGradient>
+    <filter id="glow-48">
+      <feGaussianBlur stdDeviation="1" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <circle cx="24" cy="24" r="23" fill="url(#metallic-48)" stroke="#D4AF37"/>
+  <path d="M13 7h22v4L24 26 13 11V7z" fill="url(#metallic-48)"/>
+  <path d="M13 41h22v-4L24 22 13 37v4z" fill="url(#metallic-48)"/>
+  
+  <!-- Enlarged and glowing sand -->
+  <path d="M14 8h20L24 25z" fill="url(#sand-48)" filter="url(#glow-48)"/>
+  <path d="M14 40h20L24 23z" fill="url(#sand-48)" filter="url(#glow-48)"/>
+  
+  <circle cx="24" cy="24" r="2" fill="url(#metallic-48)"/>
+</svg>
