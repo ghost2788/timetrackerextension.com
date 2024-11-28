@@ -20,6 +20,29 @@
         .hover-brand:hover {
             background-color: #C4A027;
         }
+        .gold-gradient {
+            background: linear-gradient(45deg, #D4AF37, #FFE5A0, #D4AF37);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: goldShimmer 3s ease-in-out infinite;
+            background-size: 200% 200%;
+        }
+        .hover-lift {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .card-shadow {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        @keyframes goldShimmer {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
 
         .aspect-w-16 {
             position: relative;
@@ -110,158 +133,213 @@
     </nav>
 
     <!-- Hero Section -->
-    <header class="bg-white">
-        <div class="container mx-auto px-6 py-20">
-            <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/2 mb-10 md:mb-0">
-                    <h1 class="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
-                        Track Your Time.<br>Boost Productivity.
-                    </h1>
-                    <p class="text-xl mb-8 text-gray-600">
-                        Understand and optimize how you spend time online with intuitive tracking and powerful insights.
-                    </p>
-                    <div class="space-x-4">
-                        <a href="https://chrome.google.com/webstore/detail/[your-extension-id]" 
-                           class="bg-brand text-white px-8 py-3 rounded-full font-medium hover-brand inline-flex items-center">
-                            <i class="fab fa-chrome mr-2"></i>
-                            Add to Chrome - It's Free
-                        </a>
-                    </div>
+    <section class="relative bg-gray-50 overflow-hidden">
+        <div class="max-w-7xl mx-auto">
+            <div class="relative z-10 pb-8 bg-transparent sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
+                <div class="relative pt-6 px-4 sm:px-6 lg:px-8">
+                    <!-- Navigation content -->
                 </div>
-                <div class="md:w-1/2">
-                    <div class="aspect-w-16 aspect-h-13 rounded-lg shadow-xl overflow-hidden">
-                        <img src="images/siteslist.png" 
-                             alt="Time Tracker Dashboard" 
-                             class="object-cover w-full h-full object-position-y-50">
+                <main class="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
+                    <div class="sm:text-center lg:text-left">
+                        <h1 class="text-5xl tracking-tight font-extrabold sm:text-6xl md:text-7xl mb-8">
+                            <span class="block gold-gradient">Track Your Time.</span>
+                            <span class="block gold-gradient mt-3">Boost Productivity.</span>
+                        </h1>
+                        <p class="mt-3 text-base text-gray-600 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
+                            Monitor and optimize your online time usage with our powerful browser extension. Get insights, set limits, and achieve your productivity goals.
+                        </p>
+                        <div class="mt-8 sm:mt-10">
+                            <a href="#" class="inline-flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-brand hover:bg-opacity-90 transition duration-300 md:text-lg">
+                                Get Started
+                            </a>
+                        </div>
                     </div>
-                </div>
+                </main>
             </div>
         </div>
-    </header>
+        <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-3/5 -ml-72 xl:-ml-96">
+            <div class="relative h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full p-8">
+                <img src="images/top_sites.jpg" alt="Extension Screenshot" class="max-w-md mx-auto rounded-lg shadow-2xl transform hover:scale-105 transition-transform duration-300 hover:shadow-3xl">
+            </div>
+        </div>
+    </section>
 
     <!-- Features Section -->
     <section id="features" class="py-20 bg-white">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-16">Comprehensive Time Management Suite</h2>
-            
-            <!-- Main Feature Showcase -->
-            <div class="mb-20">
-                <div class="flex flex-col md:flex-row items-center gap-12">
-                    <div class="md:w-1/2">
-                        <div class="aspect-w-16 aspect-h-9 rounded-lg shadow-xl overflow-hidden">
-                            <img src="images/dashboard.png" 
-                                 alt="Time Tracker Dashboard" 
-                                 class="object-cover w-full h-full">
-                        </div>
-                    </div>
-                    <div class="md:w-1/2">
-                        <h3 class="text-2xl font-bold mb-4">Real-Time Dashboard</h3>
-                        <p class="text-gray-600 mb-6">Track your current site usage and see daily totals at a glance. Get immediate insights into your browsing patterns.</p>
-                        <ul class="space-y-3">
-                            <li class="flex items-center">
-                                <i class="fas fa-check-circle text-brand mr-2"></i>
-                                Live time tracking for current site
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check-circle text-brand mr-2"></i>
-                                Daily, weekly, monthly views
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check-circle text-brand mr-2"></i>
-                                Top sites overview
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+            <h2 class="text-5xl font-bold text-center mb-16 gold-gradient">Essential Features</h2>
+     <!-- Daily Analytics Section -->
+<div class="mb-20">
+    <h3 class="text-2xl font-bold text-center mb-12">Daily Analytics</h3>
+    <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+        <!-- Daily Chart 1 -->
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden max-w-md mx-auto w-full transition duration-300 hover:shadow-xl">
+            <div class="p-6">
+                <h4 class="text-xl font-semibold mb-4">Daily Overview</h4>
+                <p class="text-gray-600 mb-6">Get a clear summary of your daily online activities</p>
+                <img src="images/daily_charts1.jpg" 
+                     alt="Daily Overview Chart" 
+                     class="w-full h-auto max-w-md mx-auto rounded-lg shadow">
             </div>
+        </div>
 
-            <!-- Feature Grid -->
-            <div class="grid md:grid-cols-1 lg:grid-cols-2 gap-12">
-                <!-- Analytics Card -->
-                <div class="p-8 rounded-lg shadow-lg bg-white">
-                    <div class="flex flex-col md:flex-row items-start gap-8">
-                        <div class="md:w-2/5">
-                            <div class="bg-gray-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
-                                <i class="fas fa-chart-pie text-2xl text-brand"></i>
-                            </div>
-                            <h3 class="text-xl font-semibold mb-4">Advanced Analytics</h3>
-                            <p class="text-gray-600 mb-4">View comprehensive breakdowns with pie charts and time distribution analysis.</p>
-                        </div>
-                        <div class="md:w-3/5">
-                            <div class="aspect-w-16 aspect-h-13 rounded-lg shadow-xl overflow-hidden">
-                                <img src="images/charts.png" 
-                                     alt="Category Distribution" 
-                                     class="object-cover w-full h-full">
-                            </div>
-                        </div>
+        <!-- Daily Chart 2 -->
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden max-w-md mx-auto w-full transition duration-300 hover:shadow-xl">
+            <div class="p-6">
+                <h4 class="text-xl font-semibold mb-4">Time Distribution</h4>
+                <p class="text-gray-600 mb-6">See how your time is distributed across different sites</p>
+                <img src="images/daily_charts2.jpg" 
+                     alt="Time Distribution Chart" 
+                     class="w-full h-auto max-w-md mx-auto rounded-lg shadow">
+            </div>
+        </div>
+
+        <!-- Daily Chart 3 -->
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden max-w-md mx-auto w-full transition duration-300 hover:shadow-xl">
+            <div class="p-6">
+                <h4 class="text-xl font-semibold mb-4">Hourly Activity</h4>
+                <p class="text-gray-600 mb-6">Track your online activity patterns throughout the day</p>
+                <img src="images/daily_charts3.jpg" 
+                     alt="Hourly Activity Chart" 
+                     class="w-full h-auto max-w-md mx-auto rounded-lg shadow">
+            </div>
+        </div>
+
+        <!-- Daily Chart 4 -->
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden max-w-md mx-auto w-full transition duration-300 hover:shadow-xl">
+            <div class="p-6">
+                <h4 class="text-xl font-semibold mb-4">Productive Hours Breakdown</h4>
+                <p class="text-gray-600 mb-6">View Productive vs Unproductive time spent</p>
+                <img src="images/daily_charts4.jpg" 
+                     alt="Category Breakdown Chart" 
+                     class="w-full h-auto max-w-md mx-auto rounded-lg shadow">
+            </div>
+        </div>
+    </div>
+</div>       
+            
+    </section>
+    <!-- Track Productivity Section -->
+    <section class="py-24 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-4 gold-gradient">Track Your Productivity</h2>
+            <p class="text-xl text-gray-600 text-center mb-16 max-w-3xl mx-auto">Easily categorize and monitor your online activities to optimize your time usage</p>
+            <div class="grid md:grid-cols-2 gap-16 max-w-6xl mx-auto">
+                <!-- Mark as Productive -->
+                <div class="bg-white rounded-xl card-shadow overflow-hidden hover-lift">
+                    <div class="p-10">
+                        <h3 class="text-2xl font-bold mb-6">Mark as Productive</h3>
+                        <p class="text-gray-600 mb-8 text-lg">Easily categorize websites as productive or unproductive to better track your time usage</p>
+                        <img src="images/mark_productive.jpg" alt="Mark as Productive" class="rounded-lg shadow-lg w-full">
                     </div>
                 </div>
-
-                <!-- Goals & Limits Card -->
-                <div class="p-8 rounded-lg shadow-lg bg-white">
-                    <div class="flex flex-col md:flex-row items-start gap-8">
-                        <div class="md:w-2/5">
-                            <div class="bg-gray-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
-                                <i class="fas fa-bullseye text-2xl text-brand"></i>
-                            </div>
-                            <h3 class="text-xl font-semibold mb-4">Goals & Limits</h3>
-                            <p class="text-gray-600 mb-4">Set and track custom time goals and limits for better productivity.</p>
-                        </div>
-                        <div class="md:w-3/5">
-                            <div class="aspect-w-16 aspect-h-13 rounded-lg shadow-xl overflow-hidden">
-                                <img src="images/goals.png" 
-                                     alt="Active Goals" 
-                                     class="object-cover w-full h-full">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Categories Card -->
-                <div class="p-8 rounded-lg shadow-lg bg-white">
-                    <div class="flex flex-col md:flex-row items-start gap-8">
-                        <div class="md:w-2/5">
-                            <div class="bg-gray-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
-                                <i class="fas fa-tags text-2xl text-brand"></i>
-                            </div>
-                            <h3 class="text-xl font-semibold mb-4">Custom Categories</h3>
-                            <p class="text-gray-600 mb-4">Create and assign custom categories to better organize your time.</p>
-                        </div>
-                        <div class="md:w-3/5">
-                            <div class="aspect-w-16 aspect-h-13 rounded-lg shadow-xl overflow-hidden">
-                                <img src="images/categories.png" 
-                                     alt="Custom Categories" 
-                                     class="object-cover w-full h-full">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Reports Card -->
-                <div class="p-8 rounded-lg shadow-lg bg-white">
-                    <div class="flex flex-col md:flex-row items-start gap-8">
-                        <div class="md:w-2/5">
-                            <div class="bg-gray-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
-                                <i class="fas fa-file-alt text-2xl text-brand"></i>
-                            </div>
-                            <h3 class="text-xl font-semibold mb-4">Detailed Reports</h3>
-                            <p class="text-gray-600 mb-4">Generate comprehensive reports with usage patterns and insights.</p>
-                        </div>
-                        <div class="md:w-3/5">
-                            <div class="aspect-w-16 aspect-h-13 rounded-lg shadow-xl overflow-hidden">
-                                <img src="images/reports.png" 
-                                     alt="Detailed Reports" 
-                                     class="object-cover w-full h-full">
-                            </div>
-                        </div>
+                <!-- Mark as Not Productive -->
+                <div class="bg-white rounded-xl card-shadow overflow-hidden hover-lift">
+                    <div class="p-10">
+                        <h3 class="text-2xl font-bold mb-6">Mark as Not Productive</h3>
+                        <p class="text-gray-600 mb-8 text-lg">Identify and track time-wasting websites to improve your productivity</p>
+                        <img src="images/mark_not_productive.jpg" alt="Mark as Not Productive" class="rounded-lg shadow-lg w-full">
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    <!-- Pro Features Section -->
+    <section class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-5xl font-bold text-center mb-4 gold-gradient">Pro Features</h2>
+            <p class="text-2xl text-center mb-20 gold-gradient">Unlock powerful features to maximize your productivity</p>
 
-    <!-- Pricing Section -->
-    <section id="pricing" class="py-20 bg-gray-50">
+            <!-- Advanced Analytics -->
+            <div class="mb-24">
+                <h3 class="text-3xl font-bold text-center mb-16">Advanced Analytics Dashboard</h3>
+                <div class="space-y-8 max-w-6xl mx-auto">
+                    <!-- Insights Overview -->
+                    <div class="bg-white rounded-xl card-shadow overflow-hidden hover-lift">
+                        <div class="flex flex-col md:flex-row">
+                            <div class="md:w-1/3 p-10 flex flex-col justify-center">
+                                <h4 class="text-2xl font-semibold mb-4">Insights Overview</h4>
+                                <p class="text-gray-600 text-lg">Get a comprehensive overview of your productivity patterns and website usage</p>
+                            </div>
+                            <div class="md:w-2/3">
+                                <img src="images/insights.jpg" alt="Insights Overview" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Detailed Time Distribution -->
+                    <div class="bg-white rounded-xl card-shadow overflow-hidden hover-lift">
+                        <div class="flex flex-col md:flex-row">
+                            <div class="md:w-1/3 p-10 flex flex-col justify-center">
+                                <h4 class="text-2xl font-semibold mb-4">Detailed Time Distribution</h4>
+                                <p class="text-gray-600 text-lg">Visualize your time allocation across different websites and categories</p>
+                            </div>
+                            <div class="md:w-2/3">
+                                <img src="images/charts1.jpg" alt="Time Distribution" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Productivity Trends -->
+                    <div class="bg-white rounded-xl card-shadow overflow-hidden hover-lift">
+                        <div class="flex flex-col md:flex-row">
+                            <div class="md:w-1/3 p-10 flex flex-col justify-center">
+                                <h4 class="text-2xl font-semibold mb-4">Productivity Trends</h4>
+                                <p class="text-gray-600 text-lg">Track your productivity patterns and identify areas for improvement</p>
+                            </div>
+                            <div class="md:w-2/3">
+                                <img src="images/charts2.jpg" alt="Productivity Trends" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Custom Reports -->
+                    <div class="bg-white rounded-xl card-shadow overflow-hidden hover-lift">
+                        <div class="flex flex-col md:flex-row">
+                            <div class="md:w-1/3 p-10 flex flex-col justify-center">
+                                <h4 class="text-2xl font-semibold mb-4">Custom Reports</h4>
+                                <p class="text-gray-600 text-lg">Generate detailed reports and analytics weekly</p>
+                            </div>
+                            <div class="md:w-2/3">
+                                <img src="images/charts3.jpg" alt="Custom Reports" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Goals and Limits -->
+            <div class="mb-24">
+                <h3 class="text-3xl font-bold text-center mb-16">Set Custom Goals & Limits</h3>
+                <div class="grid md:grid-cols-2 gap-16 max-w-6xl mx-auto">
+                    <div class="bg-white rounded-xl card-shadow overflow-hidden hover-lift">
+                        <div class="p-10">
+                            <div class="bg-gray-100 w-20 h-20 rounded-full flex items-center justify-center mb-8">
+                                <i class="fas fa-bullseye text-3xl text-brand"></i>
+                            </div>
+                            <h4 class="text-2xl font-semibold mb-4">Custom Goals</h4>
+                            <p class="text-gray-600 mb-8 text-lg">Set personalized productivity goals and track your progress</p>
+                            <div class="rounded-lg shadow-lg overflow-hidden">
+                                <img src="images/active_goals.jpg" alt="Goal Setting" class="w-full h-auto">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-xl card-shadow overflow-hidden hover-lift">
+                        <div class="p-10">
+                            <div class="bg-gray-100 w-20 h-20 rounded-full flex items-center justify-center mb-8">
+                                <i class="fas fa-clock text-3xl text-brand"></i>
+                            </div>
+                            <h4 class="text-2xl font-semibold mb-4">Time Limits</h4>
+                            <p class="text-gray-600 mb-8 text-lg">Set daily time limits for specific websites</p>
+                            <div class="rounded-lg shadow-lg overflow-hidden">
+                                <img src="images/active_limits.jpg" alt="Time Limits" class="w-full h-auto">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+               <!-- Pricing Section -->
+    <section id="pricing" class="bg-gray-50 py-20">
         <div class="container mx-auto px-6">
             <h2 class="text-3xl font-bold text-center mb-16">Simple, Transparent Pricing</h2>
             
@@ -274,19 +352,19 @@
                     <ul class="space-y-3 mb-8">
                         <li class="flex items-center">
                             <i class="fas fa-check text-green-500 mr-2"></i>
-                            Basic time tracking
+                            Website time tracking
                         </li>
                         <li class="flex items-center"></li>
                             <i class="fas fa-check text-green-500 mr-2"></i>
-                            Charts & Graphs
+                            Charts & Graphs showing Daily statistics
                         </li>
                         <li class="flex items-center">
                             <i class="fas fa-check text-green-500 mr-2"></i>
-                            Daily statistics
+                            Mark Sites as Productive or Unproductive
                         </li>
                         <li class="flex items-center">
                             <i class="fas fa-check text-green-500 mr-2"></i>
-                            Top sites overview
+                            Top sites list for Day, Week, Month & Year
                         </li>
                         <li class="flex items-center">
                             <i class="fas fa-check text-green-500 mr-2"></i>
@@ -338,7 +416,7 @@
     <!-- FAQ Section -->
     <section class="py-20 bg-white">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-16">Frequently Asked Questions</h2>
+            <h2 class="text-4xl font-bold text-center mb-16 gold-gradient">Frequently Asked Questions</h2>
             
             <div class="max-w-3xl mx-auto space-y-8">
                 <div>
@@ -353,33 +431,54 @@
                 
                 <div>
                     <h3 class="text-xl font-semibold mb-2">What's included in the free version?</h3>
-                    <p class="text-gray-600">The free version includes basic time tracking, daily statistics, site overview, and predefined categories. It's perfect for users who want to understand their browsing habits.</p>
+                    <p class="text-gray-600">The free version includes basic time tracking, daily statistics, site overview, and custom categories. It's perfect for users who want to understand their browsing habits.</p>
                 </div>
                 
                 <div>
                     <h3 class="text-xl font-semibold mb-2">What extra features do I get with Pro?</h3>
-                    <p class="text-gray-600">Pro users get access to daily analytics reports that they can download, set custom goals & time limits and you get access to all future features for free.</p>
+                    <p class="text-gray-600">Pro users get access to weekly analytics reports, set custom goals & time limits and you get access to all future features for free.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
+    <footer class="bg-gray-900 text-white py-12 mt-20 w-full">
         <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-8 md:mb-0">
-                    <img src="icons/icon48.png" alt="Time Tracker Logo" class="h-12 w-12 mb-4">
-                    <p class="text-gray-400">© 2024 Time Tracker</p>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">About</h3>
+                    <p class="text-gray-400">Track and optimize your online time usage with our powerful browser extension.</p>
                 </div>
-                
-                <div class="flex space-x-8">
-                    <a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a>
-                    <a href="#" class="text-gray-400 hover:text-white">Terms of Service</a>
-                    <a href="#" class="text-gray-400 hover:text-white">Contact</a>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#features" class="text-gray-400 hover:text-white transition-colors">Features</a></li>
+                        <li><a href="#pricing" class="text-gray-400 hover:text-white transition-colors">Pricing</a></li>
+                        <li><a href="#faq" class="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
+                    </ul>
                 </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact</h3>
+                    <ul class="space-y-2">
+                        <li><a href="mailto:support@timetracker.com" class="text-gray-400 hover:text-white transition-colors">Support</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Follow Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Time Tracker. All rights reserved.</p>
             </div>
         </div>
     </footer>
 </body>
-</html> 
+</html>
